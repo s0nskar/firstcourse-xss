@@ -4,8 +4,6 @@ from flask import render_template, render_template_string
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def xss():
 	return render_template('xss.html') 
@@ -33,6 +31,8 @@ def demo2():
 		messages = chats.split('|')
 		for message in messages:
 			msg.append(escape(message))
+	else:
+		chats = ''
 
 	# Appending new message to list, if any
 	new_msg = escape(request.args.get('msg', ''))
