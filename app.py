@@ -19,7 +19,9 @@ def demo():
 @app.route('/demo/1')
 def demo1():
 	q = request.args.get('q', '')
-	return render_template('demo1.html', q=q)
+	resp = make_response(render_template('demo1.html', q=q))
+	resp.headers['X-XSS-Protection'] = 0
+	return resp
 
 @app.route('/demo/2')
 def demo2():
