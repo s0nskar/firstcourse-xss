@@ -1,3 +1,6 @@
+# Author Sanskar Modi
+# github.com/sanskar-modi
+
 from flask import Flask
 from flask import request, make_response
 from flask import render_template, render_template_string
