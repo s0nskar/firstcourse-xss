@@ -15,11 +15,15 @@ RUN apt-get update && \
 RUN mkdir firstcourse-xss
 WORKDIR firstcourse-xss
 
-# Cop all the files
+# Copy all the files
 
 COPY * ./
 
 EXPOSE 5000
+
+# Installing pip packages
+
+RUN pip install -r requirements.txt
 
 # Run the services
 
